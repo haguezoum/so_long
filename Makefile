@@ -6,7 +6,7 @@
 #    By: haguezou <haguezou@student.1337.ma >       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 22:39:11 by haguezou          #+#    #+#              #
-#    Updated: 2023/05/26 22:12:03 by haguezou         ###   ########.fr        #
+#    Updated: 2023/05/27 14:55:49 by haguezou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC = main.c check_map.c check_path.c error.c init_game.c image.c move.c move_co
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address -g
+CFLAGS = -Wall -Werror -Wextra -O3 -g
 #
 
 HEADER = so_long.h 

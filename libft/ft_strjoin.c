@@ -6,7 +6,7 @@
 /*   By: haguezou <haguezou@student.1337.ma >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:01:06 by haguezou          #+#    #+#             */
-/*   Updated: 2023/05/14 23:47:50 by haguezou         ###   ########.fr       */
+/*   Updated: 2023/05/28 14:05:50 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ char	*ft_strjoin(char  *s1, char const *s2)
 	i = 0;
 	while (s2[i])
 		ptr[j++] = s2[i++];
+	free(s1);
 	return (ptr);
 }

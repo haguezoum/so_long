@@ -6,23 +6,14 @@
 /*   By: haguezou <haguezou@student.1337.ma >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 21:52:58 by haguezou          #+#    #+#             */
-/*   Updated: 2023/05/24 16:40:22 by haguezou         ###   ########.fr       */
+/*   Updated: 2023/05/28 01:17:35 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 void init_elemnt(t_mapinfo *info);
-// void palyer_pos()
-// {
-//     int i;
-//     int j;
 
-//     while(i <)
-//     {
-        
-//     }
-// }
 void init(t_mapinfo *info)
 {                                         
     info->width = 0;

@@ -6,7 +6,7 @@
 /*   By: haguezou <haguezou@student.1337.ma >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 22:49:48 by haguezou          #+#    #+#             */
-/*   Updated: 2023/05/26 21:46:43 by haguezou         ###   ########.fr       */
+/*   Updated: 2023/05/27 20:39:21 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  # include <math.h>
  # include <fcntl.h>
  # include <unistd.h>
- # include <stdio.h>
+ # include <stdio.h> //wtf ?
  # include <stdlib.h>
  
  typedef struct s_info
@@ -55,7 +55,7 @@
 
 void error(char *msg);
 void init(t_mapinfo *info);
-char **read_map(t_mapinfo *info);
+void read_map(t_mapinfo *info);
 void check_for_valid_paths(t_mapinfo *info);
 void check_for_valid_border(t_mapinfo *info);
 void check_equale_size_line(t_mapinfo *info);
@@ -70,4 +70,5 @@ void playe_pos(t_mapinfo *info);
 void move_counter(t_mapinfo *info);
 int exit_game(t_mapinfo *info);
 void free_double_pointer(char **ptr);
+char	*ft_strjoinsolong(char  *s1, char *s2);
 #endif

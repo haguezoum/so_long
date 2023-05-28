@@ -6,7 +6,7 @@
 /*   By: haguezou <haguezou@student.1337.ma >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 22:48:36 by haguezou          #+#    #+#             */
-/*   Updated: 2023/05/26 23:37:20 by haguezou         ###   ########.fr       */
+/*   Updated: 2023/05/27 23:35:17 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ int  check_elemts(t_mapinfo *info)
         free(info);
         error("The map must contain 1 Collectible at least !\n");
     }
-    if(info->player_count < 1)
+    else if(info->player_count < 1)
     {
         free_double_pointer(info->map);
         free(info);
         error("The map must contain 1 Player at least !\n");
     }   
-    if(info->exit_count < 1 || info->exit_count > 1)
+    else if(info->exit_count < 1 || info->exit_count > 1)
     {
         free_double_pointer(info->map);
         free(info);
@@ -91,45 +91,65 @@ void check_for_valid_border(t_mapinfo *info)
             error("Invalid map ! \n(side Borders not 1 or empty line)");
         }
     i = -1;
+    // || info->map[i][0] == '\n' || info->map[i][0] == '\0'
     while (++i <= (info->height - 1))
-        if(info->map[i][0] != '1' || info->map[i][info->width - 1] != '1')
+        if(info->map[i][0] != '1' || info->map[i][info->width - 1] != '1' )
         {
             free_double_pointer(info->map);
             free(info);
             error("Invalid map ! \n(side Borders not 1)");
-        }
-            
+        }       
 }
-char ** read_map(t_mapinfo *info)
+void read_map(t_mapinfo *info)
 {
     int fd;
-    char *line;
+    char *line = NULL;
+    char *tofree = NULL;
     int i;
-    char *map_name;
-    char *tmp;
-    map_name = info->map_name;
     i = 0;
+    fd = open(info->map_name, O_RDONLY);
     line = ft_strdup("");
-    fd = open(map_name, O_RDONLY);
-    while(get_next_line(fd))
-        i++;
-    info->height = i;
-    close(fd);
-    fd = open(map_name, O_RDONLY);
-    while(i > 0)
+    // tofree = ft_strdup("");
+    while(1)
     {
-        tmp = get_next_line(fd);
-        if (tmp[0] == '\n' || tmp[0] == '\0')
-        {
-            free(line);
-            free(tmp);
-            free(info);
-            error("Invalid MAP !");
-        }
-        line = ft_strjoin(line, tmp);
-        i--;
+        tofree = get_next_line(fd);
+        if(!tofree)
+            break;
+        line = ft_strjoinsolong(line,tofree);
+        free(tofree);
+        // free(line);
+        info->height += 1;
     }
-    free(tmp);
+    // while(1){}
+    info->map = ft_split(line, '\n');
+    free(tofree);
+    free(line);
     close(fd);
-    return (ft_split(line, '\n'));
+    // while(1){}
+    // - - - - - -  - - - - - - - - - - 
+    
+    // while(1){};
+    // while(1);
+    // info->height = i;
+    // close(fd);
+    // fd = open(info->map_name, O_RDONLY);
+    // while(i > 0)
+    // {
+    //     tmp = get_next_line(fd);
+    //     if (tmp[0] == '\n' || tmp[0] == '\0')
+    //     {
+    //         free(line);
+    //         free(tmp);
+    //         free(info);
+    //         error("Invalid MAP !");
+    //     }
+    //     tofree = line;
+    //     line = ft_strjoinsolong(line, tmp);
+    //     free(tofree);
+    //     free(tmp);
+    //     i--;
+    // }
+    // close(fd);
+    // printf("%d,%s\n",info->height,line);
+    // return (db_p);
 }
