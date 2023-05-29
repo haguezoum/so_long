@@ -6,12 +6,13 @@
 /*   By: haguezou <haguezou@student.1337.ma >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:01:06 by haguezou          #+#    #+#             */
-/*   Updated: 2023/05/28 14:05:50 by haguezou         ###   ########.fr       */
+/*   Updated: 2023/05/29 00:42:46 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strjoin(char  *s1, char const *s2)
+
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	size_t		s1_len;
 	size_t		s2_len;

@@ -6,27 +6,27 @@
 #    By: haguezou <haguezou@student.1337.ma >       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 22:39:11 by haguezou          #+#    #+#              #
-#    Updated: 2023/05/27 14:55:49 by haguezou         ###   ########.fr        #
+#    Updated: 2023/05/29 00:52:11 by haguezou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long 
 
-SRC = main.c check_map.c check_path.c error.c init_game.c image.c move.c move_counter.c exit_game.c
+SRC = main.c check_map.c check_path.c error.c init_game.c image.c move.c move_counter.c exit_game.c check_map_utiles.c
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra -O3 -g
-#
+CFLAGS = -Wall -Werror -Wextra
 
 HEADER = so_long.h 
 
 OBJ = ${SRC:.c=.o}
 
 LIBFT = ./libft
+
 GNL = ./get_next_line
+
 LIBRARIES = ./libft/libft.a ./get_next_line/gnl.a
-MAP = map.ber
 
 all : $(NAME)
 

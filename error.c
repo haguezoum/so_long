@@ -6,13 +6,14 @@
 /*   By: haguezou <haguezou@student.1337.ma >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:46:50 by haguezou          #+#    #+#             */
-/*   Updated: 2023/05/25 12:31:41 by haguezou         ###   ########.fr       */
+/*   Updated: 2023/05/28 22:29:53 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-void error(char *msg)
+
+void	error(char *msg)
 {
-    write(2, msg, ft_strlen(msg));
-    exit(1);
+	write(2, msg, ft_strlen(msg));
+	exit(1);
 }

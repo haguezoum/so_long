@@ -6,7 +6,7 @@
 /*   By: haguezou <haguezou@student.1337.ma >       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:54 by haguezou          #+#    #+#             */
-/*   Updated: 2023/05/12 22:45:48 by haguezou         ###   ########.fr       */
+/*   Updated: 2023/05/29 00:41:30 by haguezou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*string(int fd, char *line)
 	int		bytes;
 
 	bytes = 1;
-	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buff = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	if (buff == NULL)
 		return (free(line), NULL);
 	while (bytes > 0)
